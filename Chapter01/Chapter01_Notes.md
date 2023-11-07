@@ -37,3 +37,24 @@ Choose R to fit the pre-amp's output resistance and amplifier's input
 resistance, then choose C so that $RC \gg T$
 
 #### D. Driving and loading RC filters
+\ 
+
+![Cascading RC filters](exercise_1.24.png){#fig:rccascade width=100%}
+
+For this configuration with a desired highpass filter of cutoff frequency $f_1$
+and lowpass of cutoff frequency $f_2$:
+
+1. Determine $R_{source}$
+1. Set $R_1 = 10 \cdot R_{source}$
+1. Set $R_2 = 10 \cdot R_1$
+1. It gives $R_{load} = 10 \cdot R_2$
+1. Calculate $C_1 = \frac{1}{2\pi \cdot f_1 \cdot R_1}$
+1. Calculate $C_2 = \frac{1}{2\pi \cdot f_2 \cdot R_2}$
+1. Adjust $C_1$ and $C_2$ empirically if the accuracy is not already good enough
+
+##### Examples
+\ 
+
+![Cascading RC filters with $100 \Omega$ source](exercise_1.24-100R-source.png){#fig:rccascade-100 width=100%}
+
+![Cascading RC filters with $5 \Omega$ source](exercise_1.24-5R-source.png){#fig:rccascade-5 width=100%}
