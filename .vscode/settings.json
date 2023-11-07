@@ -1,0 +1,12 @@
+{
+    "runItOn": {
+        "commands": [
+            {
+                "match": "\\.md$",
+                "isShellCommand": false,
+                "cmd": "pandoc.render"
+            }
+        ]
+    }
+    //"pandoc.pdfOptString": "--filter pandoc-xnos"
+}
