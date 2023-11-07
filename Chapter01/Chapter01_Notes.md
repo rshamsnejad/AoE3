@@ -45,9 +45,9 @@ For this configuration with a desired highpass filter of cutoff frequency $f_1$
 and lowpass of cutoff frequency $f_2$:
 
 1. Determine $R_{source}$
-1. Set $R_1 = 10 \cdot R_{source}$
-1. Set $R_2 = 10 \cdot R_1$
-1. It gives $R_{load} = 10 \cdot R_2$
+1. Set $R_1 \ge 10 \cdot R_{source}$
+1. Set $R_2 \ge 10 \cdot R_1$
+1. It gives $R_{load} \ge 10 \cdot R_2$
 1. Calculate $C_1 = \frac{1}{2\pi \cdot f_1 \cdot R_1}$
 1. Calculate $C_2 = \frac{1}{2\pi \cdot f_2 \cdot R_2}$
 1. Adjust $C_1$ and $C_2$ empirically if the accuracy is not already good enough
