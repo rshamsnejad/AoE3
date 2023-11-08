@@ -68,3 +68,12 @@ source resistances:
 ![Cascading RC filters with $100 \Omega$ source](exercise_1.24-100R-source.png){#fig:rccascade-100 width=100%}
 
 ![Cascading RC filters with $5 \Omega$ source](exercise_1.24-5R-source.png){#fig:rccascade-5 width=100%}
+
+### 1.7.10 RC differentiators and integrators in the frequency domain
+
+A differentiator (time domain) is the same circuit as a highpass (frequency
+domain) and for it to work, the condition is $RC \ll 1/\omega$ with $\omega$
+being the pulsation associated with the highest source frequency.
+
+Same goes for integrator and lowpass: the condition is then $RC \gg 1/\omega$
+with $\omega$ being the pulsation associated with the lowest source frequency.
