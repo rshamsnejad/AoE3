@@ -62,6 +62,9 @@ and lowpass of cutoff frequency $f_2$:
 ##### Examples
 \ 
 
+Here are two examples of a 100 Hz - 10 kHz bandpass design with two different
+source resistances:
+
 ![Cascading RC filters with $100 \Omega$ source](exercise_1.24-100R-source.png){#fig:rccascade-100 width=100%}
 
 ![Cascading RC filters with $5 \Omega$ source](exercise_1.24-5R-source.png){#fig:rccascade-5 width=100%}
