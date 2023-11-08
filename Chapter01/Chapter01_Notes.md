@@ -5,9 +5,6 @@ geometry: margin=2cm
 output: pdf_document
 ---
 
-# The Art Of Electronics 3rd edition
-*Notes on Chapter 01*
-
 * Thevenin trick to get output/input impedance
 * Capacitor = frequency dependant resistor (disregarding phase shift!)
 

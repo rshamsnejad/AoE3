@@ -5,9 +5,6 @@ geometry: margin=2cm
 output: pdf_document
 ---
 
-# The Art Of Electronics 3rd edition
-*Notes on Chapter 02*
-
 # Exercise 2.2
 
 Charging from -4.4 V to +5 V :
