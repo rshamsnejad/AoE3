@@ -77,3 +77,51 @@ being the pulsation associated with the highest source frequency.
 
 Same goes for integrator and lowpass: the condition is then $RC \gg 1/\omega$
 with $\omega$ being the pulsation associated with the lowest source frequency.
+
+# Exercise 1.37
+
+* $V_{th} = 5~V$ because of the 1/2 voltage divider
+* Shutting down $V_{th}$ gives $R_{th} = 5~k\Omega$ by equivalent resistance
+* $I_N = V_{th} / R_{th} = 1~mA$
+
+When loaded by a 5k resistor, the original circuit gives
+
+$$
+V_{out} = 10 \cdot \frac{(10k \parallel 5k)}{(10k \parallel 5k) + 10k} = 2.5~V
+$$
+
+And the Norton equivalent gives $$V_{out} = (5k \parallel 5k) \cdot 0.001 = 2.5~V$
+
+# Exercise 1.38
+
+* $V_{th} = 10~k\Omega \cdot 500~\mu A = 5~V$
+* $R_{th} = 10~k\Omega$
+
+# Exercise 1.39
+
+* It's a 10 Hz highpass filter: with zero source impedance let's choose $R =
+\frac{R_{load}}{10}=1~k\Omega$
+* $C=\frac{1}{2\pi \cdot f \cdot R}=16~ \mu F$
+* Closest standard values : 15µ and 18µ
+
+![Exercise 1.39](exercise_1.39.png){#fig:ex1.39 width=100%}
+
+# Exercise 1.40
+
+* It's a 10 kHz lowpass filter : same conditions so same $R=1~k\Omega$
+* $C=\frac{1}{2\pi \cdot f \cdot R}= 15.9 nF$
+* Closest standard values : 15n and 18n
+
+![Exercise 1.40](exercise_1.40.png){#fig:ex1.40 width=100%}
+
+# Exercise 1.41
+
+To have a gain of 0.5/-6 dB at DC, we need to expose a 1/2 voltage divider, and
+then a highpass for the rest of the spectrum.
+
+![Exercise 1.41](exercise_1.41.png){#fig:ex1.41 width=100%}
+
+
+# Exercise 1.42
+
+See 1.7.1.D
