@@ -1,3 +1,10 @@
+---
+title: "The Art Of Electronics 3rd Edition - Notes on Chapter 01"
+date: 2023-11-07
+geometry: margin=2cm
+output: pdf_document
+---
+
 # The Art Of Electronics 3rd edition
 *Notes on Chapter 01*
 
