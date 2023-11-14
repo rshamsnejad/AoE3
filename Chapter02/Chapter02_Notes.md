@@ -72,3 +72,53 @@ is a bit off compared to $V_{BE}$*
 
 At 25 mA of load current the output voltage drops just above 4.75 V which is 95%
 of the targeted 5 V.
+
+# 2.2.7 Common-emitter amplifier (1st version)
+
+![Common-emitter amplifier, first version](common-emitter-01.png){#fig:ce01 width=60%}
+
+1. Define power supply voltage $V_{CC}$
+1. Define quiescent current $I_C$ (1 mA is a good rule of thumb)
+1. Determine $R_C = \frac{V_{CC}/2}{I_C}$ to get the collector voltage to half
+   the supply
+1. Set $V_{E}$ at least at 1 V (at least more than $V_{BE} = 0.6~V$) with $R_E =
+   \frac{V_E}{I_C}$
+1. Determine the input voltage divider ($R_1$ and $R_2$) to set $V_{B} = V_{E} + 0.6$
+1. Determine the input blocking capacitor with $C_{in} = \frac{1}{2\pi \cdot f
+   \cdot R_{in}}$ with $f$ being the desired
+   highpass frequency and $R_{in} = R_1 \parallel R_2 \parallel \beta R_E$
+   being the input resistance of the circuit (with $\beta = 100$ as a rule of thumb)
+1. Determine the output blocking capacitor with $C_{out} = \frac{1}{2\pi \cdot f
+   \cdot R_{out}}$ with f being the same highpass frequency and $R_{out} = R_C$
+   being the output resistance of the circuit
+
+## Example
+
+### Specifications
+
+For a power supply of 16 V, a target quiescent current of 3 mA and a highpass
+cutoff frequency of 10 Hz:
+
+1. $$V_{CC} = 16~V$$
+1. $$I_C = 3~mA$$
+1. $$R_C = \frac{V_{CC}/2}{I_C} = \frac{8}{3\mathrm{e}{-3}} = 2666~\Omega$$
+    * Closest E12 value: $R_C = 2700~\Omega$
+1. $$R_E = \frac{V_E}{I_C} = \frac{1}{3\mathrm{e}{-3}} = 333 \Omega$$
+    * Closest E12 value: $R_E = 330~\Omega$
+1. $$\frac{R_2}{R_1 + R_2} = \frac{V_B}{V_{CC}} = \frac{1.6}{16} = 0.1$$
+    * Choosing in the E12 $k\Omega$ range: $R_1 = 100~k\Omega$ and $R_2 =
+      12~k\Omega$ gives $\frac{R_2}{R_1 + R_2} = 0.107$
+1. $$R_{in} = R_1 \parallel R_2 \parallel \beta R_E = 12~k\Omega \parallel
+   100~k\Omega \parallel 33~k\Omega = 8088~\Omega$$
+   $$C_{in} = \frac{1}{2\pi \cdot f \cdot R_{in}} = \frac{1}{2\pi \times 10
+   \times 8088} = 2~\mu F$$
+    * Closest E12 value: $C_{in} = 2.2~\mu F$
+1. $$C_{out} = \frac{1}{2\pi \cdot f \cdot R_{out}} = \frac{1}{2\pi \times 10
+   \times 2700} = 6~\mu F$$
+    * Closest E12 value: $C_{out} = 5.6~\mu F$
+
+### Verification
+
+![Common-emitter amplifier, first version: DC bias](common-emitter-01_bias.png){#fig:ce01-bias width=100%}
+
+![Common-emitter amplifier, first version: AC analysis](common-emitter-01_ac.png){#fig:ce01-ac width=100%}
