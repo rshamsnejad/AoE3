@@ -122,3 +122,32 @@ cutoff frequency of 10 Hz:
 ![Common-emitter amplifier, first version: DC bias](common-emitter-01_bias.png){#fig:ce01-bias width=100%}
 
 ![Common-emitter amplifier, first version: AC analysis](common-emitter-01_ac.png){#fig:ce01-ac width=100%}
+
+### Shortcomings
+
+The gain here is
+
+$$G_{dB} = 20 \cdot \log\left(\left|\frac{-R_C}{R_E}\right|\right) = 20 \cdot
+\log\left(\frac{2700}{330}\right) = 18~dB$$
+
+It's not very high. What if we want higher gain? According to the above
+equation, there are 2 solutions:
+
+* Increase $V_{CC}$ and $R_C$: not desirable as we most of the time don't have a
+choice in the supply voltage, also increasing the collector resistance will
+result in an output resistance that would be impractically high
+* Decrease $R_E$, or remove it entirely: yay infinite gain!
+
+Of course, infinite gain doesn't happen, and as we'll see later a new model is
+necessary to find a solution for higher gain.
+
+# Exercise 2.24
+
+* Base voltage is
+$$V_B = V_{CC} \cdot \frac{1600}{1600+8200} = 1.63~V$$
+* Emitter voltage is
+$$V_E = V_B - 0.6 = 1.03~V$$
+* Load current is
+$$I_{load} = I_C \approx I_E = \frac{V_E}{R_E} = \frac{1.03}{1500} = 687~\mu A$$
+* The output compliance is from $V_C \approx 1.13~V$ (saturation: $V_C$ just a
+  tiny bit above $V_E$) to $V_C = V_{CC} = 10~V$
