@@ -151,3 +151,54 @@ $$V_E = V_B - 0.6 = 1.03~V$$
 $$I_{load} = I_C \approx I_E = \frac{V_E}{R_E} = \frac{1.03}{1500} = 687~\mu A$$
 * The output compliance is from $V_C \approx 1.13~V$ (saturation: $V_C$ just a
   tiny bit above $V_E$) to $V_C = V_{CC} = 10~V$
+
+# BJT bootstrapping
+
+The bias divider network lowers the input resistance of the circuit compared to
+the transistor alone. To increase it, a "bootstrapping" method can be used:
+
+![BJT bootstrapping](figure_2.80.png){#fig:bootstrap width=70%}
+
+The input resistance is:
+
+$$R_{in} = R_1 \parallel R_2 + R_{boot}$$
+
+$C_{boot}$ is chosen to have the lowest reactance possible at signal
+frequencies. It means that at those frequencies, it acts as a wire and $R_3$
+sees very similar "voltage wiggles" on each side and thus has very tiny currents
+going through it. $R_3$ thus appears like a much larger resistor at signal
+frequencies and so $R_{in}$ is increased too:
+
+$$R_{boot~AC} = \frac{R_boot}{1-G} \gg R_3$$
+
+With $G$ being the gain of the circuit.
+
+In the case of an ideal emitter follower, $G = 1$ and so $R_{boot}$ is infinite.
+In real life a follower has a gain of slightly less than 1, so $R_{boot}$ will
+not be infinite but still very large. This also works with a common-emitter
+amplifier as the emitter voltage still follows the base voltage.
+
+## Exercise 2.26
+
+* The input impedance before modification is $R_{in} = R_1 \parallel R_2 \parallel
+\beta R_E \approx R_1 \parallel R_2 = 8913~\Omega$
+
+* $R_{boot}$ is chosen to keep $R_{in} \le \frac{\beta R_E}{10}$. With 2.2k, that
+gives $R_{in} \approx 12~k\Omega$
+
+* $C_{boot}$ is chosen to be $10~\Omega$ at 100 Hz:
+
+* $$C_{boot} = \frac{1}{2\pi \times 100 \times 10} = 160~\mu F$$
+
+* Since the AC input impedance is increased by the bootstrapping, the input
+  capacitor must be reduced to keep the highpass at 100 Hz. The follower gain is
+  -0.292 dB / 0.966 (measured in simulation):
+
+  $$ R_{boot~AC} = \frac{R_{boot}}{1-G} = \frac{2200}{1-0.966} = 64705~\Omega$$
+  $$ C_{in} = \frac{1}{2\pi \cdot f \cdot R_{in~AC}} = \frac{1}{2\pi \times 100
+  \times (8913 + 64705)} = 22~nF$$
+
+In practice, 27 nF gets us closer to the 100 Hz -3 dB point:
+
+
+![Exercise 2.26](exercise_2.26.png){#fig:ex2.26 width=100%}
