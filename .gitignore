@@ -3,6 +3,7 @@
 # Simetrix files
 *.net
 *.out
+*.sxsch.lck
 
 .$*
 tex2pdf*
