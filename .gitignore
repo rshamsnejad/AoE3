@@ -7,3 +7,6 @@
 
 .$*
 tex2pdf*
+
+*.log
+*.raw
